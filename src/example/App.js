@@ -6,13 +6,11 @@
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import CircularPicker from '../CircularPickerNativeView';
 
-
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends PureComponent{
   state = {
     value: 0,
     color: '#D83055'

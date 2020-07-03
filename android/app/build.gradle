@@ -124,6 +124,14 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+   packagingOptions {
+          pickFirst 'lib/x86/libc++_shared.so'
+          pickFirst 'lib/x86_64/libjsc.so'
+          pickFirst 'lib/arm64-v8a/libjsc.so'
+          pickFirst 'lib/arm64-v8a/libc++_shared.so'
+          pickFirst 'lib/x86_64/libc++_shared.so'
+          pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+      }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -143,7 +151,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'com.agilie:circular-picker:1.0'
 }
 
