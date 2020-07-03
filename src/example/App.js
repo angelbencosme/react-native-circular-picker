@@ -8,14 +8,14 @@
 
 import React, {Component} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import CircularPicker from './CircularPickerNativeView';
+import CircularPicker from '../CircularPickerNativeView';
 
 
 type Props = {};
 export default class App extends Component<Props> {
   state = {
     value: 0,
-    color: '#00EDE9'
+    color: '#D83055'
   };
 
   onValueChange = ({nativeEvent}) => {
@@ -37,7 +37,7 @@ export default class App extends Component<Props> {
                         onColorChange={this.onColorChange}
                         max={100}
                         text="Volume"
-                        colors={['#00EDE9', '#0087D9', '#8A1CC3']}/>
+                        colors={['#D83055', '#2E9067', '#996699']}/>
       </View>
     );
   }
@@ -48,6 +48,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#1a1650',
+    backgroundColor: '#fff',
   },
 });
